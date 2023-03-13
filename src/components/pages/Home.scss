@@ -1,0 +1,185 @@
+
+h1 {
+    margin: 0;
+    font-family: "Source Sans Pro", sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.home-title-section{
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  position: relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.home-title-text-1 {
+    font-size: 100px;
+    font-weight: 700;
+}
+
+
+.home-title-introduction{
+    height: 200px;
+    width: 200px;
+    margin-bottom: 200px;
+    text-align: center;
+    z-index: 10;
+    
+}
+
+
+.home-title-background{
+  top: 0;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+}
+
+$particleSize: 20vmin;
+$animationDuration: 6s;
+$amount: 30;
+.home-title-background span {
+  width: $particleSize;
+  height: $particleSize;
+  border-radius: $particleSize;
+  backface-visibility: hidden;
+  position: absolute;
+  animation-name: move;
+  animation-duration: $animationDuration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  $colors: (
+    #d48aff,
+    #C1E1C1,
+    #99da99,
+    #ae92db
+  );
+  @for $i from 1 through $amount {
+    &:nth-child(#{$i}) {
+      color: nth($colors, random(length($colors)));
+      /*top: random(50) * 1%;
+      left: random(75) * 1%;*/
+      animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
+      animation-delay: random(($animationDuration + 10s) * 10) / 10 * -6s;
+      $origin-x: (random(50)+25) * 1vw;
+      $origin-y: (random(50) - 25) * 1vh;
+      top: ($origin-y+random(15)+10);
+      left: ($origin-x+random(15)+10);
+
+      transform-origin: (random(50) - 25) * 1vw (random(25) - 75) * 1vh;
+      $blurRadius: (random() + 0.5) * $particleSize * 0.5;
+      $x: if(random() > 0.5, -1, 1);
+      box-shadow: ($particleSize * 2 * $x) 0 $blurRadius currentColor;
+    }
+  }
+}
+
+
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+.home-body-section {
+  height: 400vh;
+  width: 100%;
+  background-color: #d48aff;
+}
+
+.home-body-intro {
+  background-color: black;
+  padding-bottom: 30px;
+}
+
+
+.home-body-content {
+  margin-bottom: 50px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+}
+
+.home-body-content-description {
+  height: 30vw;
+  width: 30vw;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.black-text {
+  color: black;
+}
+
+.home-body-content-graphic {
+  height: 30vw;
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10%;
+  padding:20px;
+  box-sizing: border-box;
+
+
+}
+
+.code-grid-item {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+
+$amount: 6;
+.rel {
+  position: relative;
+}
+
+.home-body-content-graphic span {
+  background-color: white;
+  position: absolute;
+  height: 40%;
+  width: 70%;
+
+  @for $i from 1 through $amount {
+    &:nth-child(#{$i}) {
+      
+      left: $i*8%;
+      top: $i*8%;
+
+    }
+  }
+}
+
+.home-body-content-graphic span:hover {
+  background-color: #99da99;
+  transform: translate(0, -100px);
+  transition: transform 0.5s;
+  padding-bottom: 100px;
+}
+
+.grid div:hover {
+  transform: scale(1.5, 1.5);
+  transition: transform 0.3s;
+  
+  background-color: white;
+
+}
