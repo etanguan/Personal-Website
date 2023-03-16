@@ -23,6 +23,7 @@ code {
 }
 
 .spacer-250 {
+  position: relative;
   aspect-ratio: 960/250;
   width: 100%;
   background-repeat: no-repeat;
@@ -33,11 +34,13 @@ code {
 }
 
 .spacer-200 {
+  position: relative;
   aspect-ratio: 960/200;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  z-index: 20;
   
 }
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
@@ -8,9 +9,12 @@ import Home from './components/pages/Home';
 library.add(fas);
 
 
+
 function App() {
   return (
+
     <>
+
       <Router>
         <Navbar/>
         <Routes>
@@ -18,6 +22,7 @@ function App() {
 
         </Routes>
       </Router>
+
     </>
   );
 }
