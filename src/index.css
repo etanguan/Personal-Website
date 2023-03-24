@@ -1,7 +1,7 @@
 :root {
   --pastel-purple: #9a74ff;
   --pink-purple:#d48aff;
-  --pastel-green:#A7FFDF;
+  --pastel-green:#D1FFB9;
 }
 
 p {
@@ -51,13 +51,21 @@ code {
 .wave-2 {
   background-image: url("../public/images/waves2.svg");
 }
+.wave-black-purple {
+  background-image: url("../public/images/blackpurplewaves.svg")
+}
 
 .wave-purple-green {
-  background-image: url("../public/images/purplegreenwaves2.svg")
+  background-image: url("../public/images/purplegreenwaves5.svg")
 }
 
 .wave-green-purple {
-  background-image: url("../public/images/greenpurplewaves.svg")
+  background-image: url("../public/images/greenpurplewaves1.svg")
+}
+
+.wave-purple-black {
+  background-image: url("../public/images/purpleblackwaves.svg");
+  margin-top: -200px;
 }
 
 .blob-1 {
